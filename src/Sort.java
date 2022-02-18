@@ -46,12 +46,41 @@ public class Sort
   // Part C.  Sorting a 1000-word list!
   public static void selectionSortWordList(ArrayList<String> words)
   {
-    /* TO BE IMPLEMENTED IN PART C */
+      int count = 0;
+      for (int i = 0; i < words.size() - 1; i++)
+      {
+          int minIndex = i;
+          for (int j = i + 1; j < words.size(); j++)
+          {
+            count++;
+            if (words.get(j).compareTo(words.get(minIndex)) < 0)
+            {
+              minIndex = j;
+            }
+          }
+          String temp = words.get(i);
+          words.set(i, words.get(minIndex));
+          words.set(minIndex, temp);
+      }
+      System.out.println("Selection Sort, number of iterations: " + count);
   }
 
   // Part C.  Sorting a 1000-word list!
   public static void insertionSortWordList(ArrayList<String> words)
-  {    
-    /* TO BE IMPLEMENTED IN PART C */
+  {
+    int count = 0;
+    for (int i = 1; i < words.size(); i++)
+    {
+        String temp = words.get(i);
+        int possibleIndex = i;
+        while (possibleIndex > 0 && temp.compareTo(words.get(possibleIndex - 1)) < 0)
+        {
+          count++;
+          words.set(possibleIndex, words.get(possibleIndex - 1));
+          possibleIndex--;
+        }
+        words.set(possibleIndex, temp);
+    }
+    System.out.println("Insertion Sort, number of iterations: " + count);
   }
 }
