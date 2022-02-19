@@ -38,6 +38,46 @@ public class WordSortTest
     
     System.out.println("Sorted:");
     System.out.println(allWords2);
+
+    System.out.println("------- TESTING DESCENDING SELECTION SORT (WORDS LIST) -------");
+    ArrayList<String> allWords3 = new ArrayList<String>();
+    allWords3.add("apple");
+    allWords3.add("pineapple");
+    allWords3.add("cherry");
+    allWords3.add("zebra");
+    allWords3.add("chore");
+    allWords3.add("goat");
+
+    System.out.println("This list contains " + allWords3.size() + " common words");
+
+    System.out.println("Unsorted:");
+    System.out.println(allWords3);
+
+    // sort the list with selection sort
+    Sort.selectionSortWordListDescending(allWords3);
+
+    System.out.println("Sorted:");
+    System.out.println(allWords3);
+
+    System.out.println("------- TESTING DESCENDING INSERTION SORT (WORDS LIST) -------");
+    ArrayList<String> allWords4 = new ArrayList<String>();
+    allWords4.add("apple");
+    allWords4.add("pineapple");
+    allWords4.add("cherry");
+    allWords4.add("zebra");
+    allWords4.add("chore");
+    allWords4.add("goat");
+
+    System.out.println("This list contains " + allWords4.size() + " common words");
+
+    System.out.println("Unsorted:");
+    System.out.println(allWords4);
+
+    // sort the list with selection sort
+    Sort.insertionSortWordListDescending(allWords4);
+
+    System.out.println("Sorted:");
+    System.out.println(allWords4);
   }
   
   // helper method to load words from words.txt
